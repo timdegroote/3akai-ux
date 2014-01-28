@@ -1268,10 +1268,10 @@ ul.oae-list > li:first-child .oae-listitem {
 }
 
 .oae-list-options .oae-list-options-title,
-.oae-list-options .btn.oae-list-options-title,
-.oae-list-options .btn.oae-list-options-title:hover,
-.oae-list-options .btn.oae-list-options-title:active,
-.oae-list-options .btn.oae-list-options-title:focus,
+.oae-list-options .oae-list-options-title,
+.oae-list-options .oae-list-options-title:hover,
+.oae-list-options .oae-list-options-title:active,
+.oae-list-options .oae-list-options-title:focus,
 .oae-list-options .oae-list-options-toggle,
 .oae-list-options .btn.oae-list-options-toggle,
 .oae-list-options .btn.oae-list-options-toggle:disabled,
