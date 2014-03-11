@@ -73,7 +73,8 @@ require.config({
         'oa.fileupload': '/avocet/js/fileupload',
         'oa.details-form': '/avocet/js/details-form',
         'oa.logout': '/avocet/js/logout',
-        'oa.multi-add': '/avocet/js/multi-add'
+        'oa.multi-add': '/avocet/js/multi-add',
+        'oa.my-uploads': '/avocet/js/my-uploads'
     },
     'shim': {
         'jquery.autosuggest': ['jquery'],
@@ -113,7 +114,8 @@ define([
     var widgets = {
         'fileupload': 'oa.fileupload',
         'details-form': 'oa.details-form',
-        'logout': 'oa.logout'
+        'logout': 'oa.logout',
+        'my-uploads': 'oa.my-uploads'
     };
 
     $(function() {

@@ -1,0 +1,37 @@
+<div class="oa-my-uploads">
+  <header class="page-header oa-page-header">
+    <h2>Your uploads</h2>
+  </header>
+
+  <% if (!uploads.length) { %>
+    <p class="alert alert-warning">You haven't uploaded any yet.</p>
+  <% } %>
+
+  <% for (index in uploads) { %>
+    <% var upload = uploads[index]; %>
+    <article class="panel panel-default">
+      <header class="panel-heading">
+        <h4>Article title</h4>
+      </header>
+      <div class="panel-body">
+        <dl>
+          <% if (upload.correspondingAuthor) { %>
+            <dt>Corresponding author</dt>
+            <dd><%= upload.correspondingAuthor %></dd>
+          <% } %>
+          <% if (upload.journal) { %>
+            <dt>Journal</dt>
+            <dd><%= upload.journal %></dd>
+          <% } %>
+          <% if (upload.ticket) { %>
+            <dt>Ticket Number</dt>
+            <dd><%= upload.ticket %></dd>
+          <% } %>
+        </dl>
+      </div>
+      <footer class="panel-footer clearfix">
+        <a href="#" class="btn btn-default pull-right">View</a
+      </footer>
+    </article>
+  <% } %>
+</div>
