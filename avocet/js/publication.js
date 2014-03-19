@@ -23,6 +23,8 @@ define(['jquery', 'underscore', 'oae.core'], function($, _, oae) {
 
     // Variable used to cache the requested content profile
     var publicationProfile = null;
+    // Variable to cache the linked content profile
+    var linkedContentProfile = null;
 
     /**
      * Get the publication's basic profile and set up the screen. If the publication
@@ -33,28 +35,42 @@ define(['jquery', 'underscore', 'oae.core'], function($, _, oae) {
         oae.api.publication.getPublication(publicationId, function(err, publication) {
             // Cache the publication profile data
             publicationProfile = publication;
+            // Cache the linked content profile data
+            linkedContentProfile = publicationProfile.linkedContent;
             // Set the browser title
             oae.api.util.setBrowserTitle(publicationProfile.displayName);
             // Show the publication preview
-            setUpPublicationPreview();
+            renderPublicationPreview();
             // Show the publication metadata
             setUpPublicationMetaData();
+            // Set up push notifications
+            setUpPushNotifications();
             // We can now unhide the page
             oae.api.util.showPage();
         });
     };
 
     /**
-     * Render the publication preview.
+     * Renders the publication preview onto the page.
      */
-    var setUpPublicationPreview = function() {
-        // Load document viewer when a PDF or Office document needs to be displayed
-        var linkedContent = publicationProfile.linkedContent;
-        if (linkedContent.previews && linkedContent.previews.pageCount) {
-            oae.api.widget.insertWidget('documentpreview', null, $('#publication-preview-container'), null, linkedContent);
-        } else {
-            oae.api.widget.insertWidget('filepreview', null, $('#publication-preview-container'), null, linkedContent);
-        }
+    var renderPublicationPreview = function() {
+        var $widgetContainer = $('#publication-preview-container').empty();
+        var widgetId = linkedContentProfile.previews && linkedContentProfile.previews.pageCount ? 'documentpreview' : 'filepreview';
+        oae.api.widget.insertWidget(widgetId, null, $widgetContainer, null, linkedContentProfile);
+    };
+
+    /**
+     * Subscribed to any push notification which would require the content previewer to rerender
+     */
+    var setUpPushNotifications = function() {
+        oae.api.push.subscribe(publicationProfile.linkedContentId, 'activity', publicationProfile.signature, 'internal', false, function(activity) {
+            // If the previews have finished, rerender the document previewer
+            if (activity['oae:activityType'] === 'previews-finished') {
+                // Update the linked content profile with the profile provided in the acitivty object
+                linkedContentProfile = activity.object;
+                renderPublicationPreview();
+            }
+        });
     };
 
     /**
@@ -65,5 +81,4 @@ define(['jquery', 'underscore', 'oae.core'], function($, _, oae) {
     };
 
     getPublicationProfile();
-
 });
