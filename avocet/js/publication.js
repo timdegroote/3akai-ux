@@ -20,11 +20,8 @@ define(['jquery', 'underscore', 'oae.core'], function($, _, oae) {
     // The publication id will then be `p:<tenantId>/<publicationId>`
     // e.g. publication/cam/xkVkSpFJo
     var publicationId = 'p:' + $.url().segment(2) + ':' + $.url().segment(3);
-
     // Variable used to cache the requested content profile
     var publicationProfile = null;
-    // Variable to cache the linked content profile
-    var linkedContentProfile = null;
 
     /**
      * Get the publication's basic profile and set up the screen. If the publication
@@ -35,8 +32,6 @@ define(['jquery', 'underscore', 'oae.core'], function($, _, oae) {
         oae.api.publication.getPublication(publicationId, function(err, publication) {
             // Cache the publication profile data
             publicationProfile = publication;
-            // Cache the linked content profile data
-            linkedContentProfile = publicationProfile.linkedContent;
             // Set the browser title
             oae.api.util.setBrowserTitle(publicationProfile.displayName);
             // Show the publication preview
@@ -55,6 +50,7 @@ define(['jquery', 'underscore', 'oae.core'], function($, _, oae) {
      */
     var renderPublicationPreview = function() {
         var $widgetContainer = $('#publication-preview-container').empty();
+        var linkedContentProfile = publicationProfile.linkedContent;
         var widgetId = linkedContentProfile.previews && linkedContentProfile.previews.pageCount ? 'documentpreview' : 'filepreview';
         oae.api.widget.insertWidget(widgetId, null, $widgetContainer, null, linkedContentProfile);
     };
@@ -66,8 +62,8 @@ define(['jquery', 'underscore', 'oae.core'], function($, _, oae) {
         oae.api.push.subscribe(publicationProfile.linkedContentId, 'activity', publicationProfile.signature, 'internal', false, function(activity) {
             // If the previews have finished, rerender the document previewer
             if (activity['oae:activityType'] === 'previews-finished') {
-                // Update the linked content profile with the profile provided in the acitivty object
-                linkedContentProfile = activity.object;
+                // Update the linked content profile in the publicationProfile with the one provided in the activity object
+                publicationProfile.linkedContent = activity.object;
                 renderPublicationPreview();
             }
         });
