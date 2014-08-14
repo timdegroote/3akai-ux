@@ -110,14 +110,17 @@
     background-color: #F9F9F9;
 }
 
+.oa-modal-header h4 {
+    color: #106470;
+}
+
 .oa-modal-body h5 {
     color: #106470;
 }
 
 .oa-modal-body p,
 .oa-modal-body ul,
-.oa-modal-body ol,
-.oa-modal-header h4 {
+.oa-modal-body ol {
     color: #575A5D;
 }
 

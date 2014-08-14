@@ -406,6 +406,10 @@ body {
     position: relative;
 }
 
+.oa-modal .modal-title {
+    margin: 0;
+}
+
 .oa-navigation-area .oa-content-container {
     padding-right: 190px;
 
