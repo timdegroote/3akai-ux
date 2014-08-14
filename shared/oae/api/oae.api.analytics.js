@@ -134,6 +134,15 @@ define(['exports', 'require', 'jquery', 'underscore', 'oae.api.config'], functio
         ev.stopPropagation();
     };
 
+    var _trackAnchorClick = function(ev) {
+        if (ev.currentTarget.target === '_blank') {
+            // Just send the event to GA when the anchor has [target="_blank"] defined
+            trackLinkClick(a.href);
+        } else {
+            _interceptAndTrackAnchorClick(ev);
+        }
+    };
+
     /**
      * Bind an event handler to watch for and track clicks on links to pages on external websites.
      */
@@ -141,7 +150,7 @@ define(['exports', 'require', 'jquery', 'underscore', 'oae.api.config'], functio
         $(document).on('click', 'a', function(ev) {
             var a = ev.currentTarget;
             if (a.hostname !== window.location.hostname) {
-                _interceptAndTrackAnchorClick(ev);
+                _trackAnchorClick(ev);
             }
         });
     };
@@ -156,7 +165,7 @@ define(['exports', 'require', 'jquery', 'underscore', 'oae.api.config'], functio
         $(document).on('click', 'a', function(ev) {
             var a = ev.currentTarget;
             if (a.href === absAddendumUrl) {
-                _interceptAndTrackAnchorClick(ev);
+                _trackAnchorClick(ev);
             }
         });
     };
