@@ -224,7 +224,6 @@ body {
 .oa-form-section {
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    overflow: hidden;
     padding: 0;
 }
 
