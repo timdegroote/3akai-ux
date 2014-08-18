@@ -141,6 +141,10 @@ body {
     font-size: 21px;
 }
 
+.oa-form .oae-error {
+    font-size: 16px;
+}
+
 /**************************
  ** File upload progress **
  **************************/

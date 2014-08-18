@@ -281,6 +281,22 @@
     border-color: #C7C7C7;
 }
 
+.oa-form .form-control::-moz-placeholder {
+    color: #999;
+}
+
+.oa-form .form-control:-ms-input-placeholder {
+    color: #999;
+}
+
+.oa-form .form-control::-webkit-input-placeholder {
+    color: #999;
+}
+
+.oa-form .has-error .form-control {
+    border-color: #A94442;
+}
+
 /****************
  ** My uploads **
  ****************/
