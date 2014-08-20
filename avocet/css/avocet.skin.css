@@ -293,6 +293,10 @@
     color: #999;
 }
 
+#oa-publicationform.oa-form .control-label i {
+    color: #7E7E7E;
+}
+
 .oa-form .has-error .form-control {
     border-color: #A94442;
 }

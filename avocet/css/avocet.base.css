@@ -24,9 +24,8 @@ body {
     padding-right: 0;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
-    /* This is here to override OAE's icon colour styles to for example '.icon-ok' */
+.icon-ok {
+    /* This is here to override OAE's icon colour style for the 'ok' icon */
     color: inherit!important;
 }
 
