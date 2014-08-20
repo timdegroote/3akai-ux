@@ -291,15 +291,6 @@
     color: #575A5D;
 }
 
-.oa-myuploads-metadata h4 a {
-    color: #106470;
-}
-
-.oa-myuploads-metadata h4 a:focus,
-.oa-myuploads-metadata h4 a:hover {
-    color: #70A2A9;
-}
-
 .oa-myuploads-metadata span {
     color: #8E908F;
 }
