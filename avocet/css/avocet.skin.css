@@ -110,14 +110,17 @@
     background-color: #F9F9F9;
 }
 
+.oa-modal-header h4 {
+    color: #106470;
+}
+
 .oa-modal-body h5 {
     color: #106470;
 }
 
 .oa-modal-body p,
 .oa-modal-body ul,
-.oa-modal-body ol,
-.oa-modal-header h4 {
+.oa-modal-body ol {
     color: #575A5D;
 }
 
@@ -272,10 +275,38 @@
     color: #575A5D;
 }
 
+.oa-form-required:after {
+    color: #D84040;
+}
+
 .oa-form input[type="email"],
 .oa-form input[type="text"],
 .oa-form textarea {
     border-color: #C7C7C7;
+}
+
+.oa-form .form-control::-moz-placeholder {
+    color: #999;
+}
+
+.oa-form .form-control:-ms-input-placeholder {
+    color: #999;
+}
+
+.oa-form .form-control::-webkit-input-placeholder {
+    color: #999;
+}
+
+#oa-publicationform.oa-form .control-label i {
+    color: #7E7E7E;
+}
+
+.oa-form .has-error .form-control {
+    border-color: #A94442;
+}
+
+.oa-form .has-error .input-group-addon {
+    border-color: #B29A99;
 }
 
 /****************

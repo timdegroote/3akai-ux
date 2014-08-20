@@ -141,6 +141,18 @@ body {
     font-size: 21px;
 }
 
+.oa-form .oae-error {
+    font-size: 16px;
+}
+
+.oa-form .control-label i {
+    font-size: 18px;
+}
+
+.oa-form .popover {
+    font-size: 16px;
+}
+
 /**************************
  ** File upload progress **
  **************************/
