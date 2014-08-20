@@ -275,6 +275,10 @@
     color: #575A5D;
 }
 
+.oa-form-required:after {
+    color: #D84040;
+}
+
 .oa-form input[type="email"],
 .oa-form input[type="text"],
 .oa-form textarea {
@@ -299,6 +303,10 @@
 
 .oa-form .has-error .form-control {
     border-color: #A94442;
+}
+
+.oa-form .has-error .input-group-addon {
+    border-color: #B29A99;
 }
 
 /****************
