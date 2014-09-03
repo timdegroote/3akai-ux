@@ -242,6 +242,16 @@ body {
     margin-top: 0;
 }
 
+/* Help section */
+
+.oa-help-section {
+    padding: 20px 0;
+}
+
+.oa-help-section p {
+    margin-top: 15px;
+}
+
 /*************
  ** Banners **
  *************/
