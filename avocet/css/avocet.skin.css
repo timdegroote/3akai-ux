@@ -470,6 +470,15 @@
     border-bottom-color: #EDECEB;
 }
 
+#oa-submitpublication-upload .oa-submitpublication-btn-upload {
+    background: #DB6E4C;
+    color: #FFF;
+}
+
+#oa-submitpublication-upload .oa-submitpublication-btn-upload:hover {
+    background: #CB4F00;
+}
+
 #oa-submitpublication-welcome-container .oa-submitpublication-btn-help {
     color: #106470;
 }
