@@ -210,15 +210,6 @@
  ** Section Colors **
  ********************/
 
-/* Home section */
-.oa-home-section {
-    background-color: #FFF;
-}
-
-.oa-home-section:nth-child(odd) {
-    background-color: #F9F9F9;
-}
-
 /* Content section */
 .oa-content-section {
     background-color: #FFF;
