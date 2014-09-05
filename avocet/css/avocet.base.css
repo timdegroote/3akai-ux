@@ -135,10 +135,6 @@ body {
     position: relative;
 }
 
-.oa-home-container {
-    padding: 0 190px;
-}
-
 .oa-content-container {
     max-width: 822px;
 }
@@ -200,16 +196,12 @@ body {
 /* Home section */
 
 .oa-home-section {
-    padding: 44px 0 56px 0;
+    padding: 44px 28px 56px 28px;
     text-align: center;
 }
 
 .oa-home-section h3 {
     margin: 0 0 10px 0;
-}
-
-.oa-home-section .oa-btn-upload {
-    margin-top: 25px;
 }
 
 /* Content section */
@@ -240,6 +232,16 @@ body {
 
 .oa-form-section.oa-section h4 + p {
     margin-top: 0;
+}
+
+/* Help section */
+
+.oa-help-section {
+    padding: 20px 0;
+}
+
+.oa-help-section p {
+    margin-top: 15px;
 }
 
 /*************

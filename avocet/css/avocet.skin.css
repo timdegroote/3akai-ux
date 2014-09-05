@@ -210,15 +210,6 @@
  ** Section Colors **
  ********************/
 
-/* Home section */
-.oa-home-section {
-    background-color: #FFF;
-}
-
-.oa-home-section:nth-child(odd) {
-    background-color: #F9F9F9;
-}
-
 /* Content section */
 .oa-content-section {
     background-color: #FFF;
@@ -477,6 +468,15 @@
 #oa-submitpublication-welcome-container header {
     background-color: #F3F6F6;
     border-bottom-color: #EDECEB;
+}
+
+#oa-submitpublication-upload .oa-submitpublication-btn-upload {
+    background: #DB6E4C;
+    color: #FFF;
+}
+
+#oa-submitpublication-upload .oa-submitpublication-btn-upload:hover {
+    background: #CB4F00;
 }
 
 #oa-submitpublication-welcome-container .oa-submitpublication-btn-help {
