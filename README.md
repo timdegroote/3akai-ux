@@ -3,7 +3,7 @@
 3akai-ux is the front-end for the Open Academic Environment project.
 
 ## Build status
-[![Build Status](https://travis-ci.org/oaeproject/3akai-ux.png?branch=master)](https://travis-ci.org/oaeproject/3akai-ux)
+[![Build Status](https://api.travis-ci.org/CUL-DigitalServices/avocet-ui.png?branch=master)](https://travis-ci.org/CUL-DigitalServices/avocet-ui)
 
 ## Installing OAE
 
