@@ -389,6 +389,10 @@ body {
     z-index: 1;
 }
 
+.oa-modal-header .close {
+    margin-top: 5px;
+}
+
 .oa-modal-footer {
     border-top-style: solid;
     border-top-width: 1px;
