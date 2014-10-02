@@ -446,7 +446,6 @@ body {
 
 .oa-navigation-area .oa-content-container {
     padding-right: 190px;
-
     /* Has the effect of layering the content higher than the side nav
        as both this element and the nav share the same stacking context,
        both this and the nav are positioned and this element occours
